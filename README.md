@@ -1,3 +1,9 @@
+# React Todo App
+
+React todo app using context and hooks with a basic [express](https://github.com/Lisviks/basic-express-app) app
+
+---
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts

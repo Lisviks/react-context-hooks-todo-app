@@ -1,0 +1,135 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&family=Rock+Salt&display=swap');
+
+$yellow: #fec92d;
+$grey-1: #444;
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  background: #333;
+  color: #fff;
+}
+
+.container {
+  max-width: 375px;
+  margin: auto;
+  text-align: center;
+}
+
+.btn {
+  cursor: pointer;
+  border: none;
+  background: none;
+  outline: none;
+}
+
+.title {
+  margin-top: 4rem;
+  font-size: 2rem;
+  color: $yellow;
+  font-family: 'Rock Salt', cursive;
+}
+
+// https://codepen.io/cabrera/pen/mKoBa
+.checkbox-field {
+  $green: #22b573;
+  $grey: #666;
+  $transitionSpeed: 200ms;
+
+  position: relative;
+
+  input[type='checkbox'] + label {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    border: 2px solid $grey;
+    border-radius: 100%;
+    top: 50%;
+    left: 50%;
+    transform: translate(0%, -50%);
+    transition: all ease-out $transitionSpeed;
+    text-indent: 2.5rem;
+    white-space: nowrap;
+    color: #fff;
+    font-size: 1.2rem;
+    user-select: none;
+
+    &:after {
+      content: '';
+      position: absolute;
+      width: 0px;
+      height: 10px;
+      border-bottom: 3px solid $green;
+      border-left: 3px solid $green;
+      top: 25%;
+      left: 50%;
+      transform-origin: bottom left;
+      transform: rotate(-45deg);
+      opacity: 0;
+      transition: all ease-out $transitionSpeed;
+    }
+  }
+
+  input[type='checkbox']:checked + label {
+    border: 3px solid $green;
+    color: $grey;
+
+    &:after {
+      opacity: 1;
+      width: 25px;
+    }
+  }
+
+  .checkbox {
+    display: none;
+  }
+}
+
+// Todos
+.list {
+  list-style: none;
+  margin-top: 4rem;
+
+  .list-item {
+    display: flex;
+    justify-content: space-between;
+    background: $grey-1;
+    padding: 0.7rem 1rem;
+    border: 1px solid $yellow;
+    border-radius: 5px;
+    margin-bottom: 1rem;
+  }
+}
+
+// Form
+.form {
+  display: flex;
+  justify-content: space-between;
+
+  .text-input {
+    padding: 0.6rem 1rem;
+    width: 100%;
+    background: $grey-1;
+    border: 1px solid $yellow;
+    border-right: none;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    outline: none;
+    color: #fff;
+    font-size: 1.1rem;
+  }
+
+  .btn {
+    border: 1px solid $yellow;
+    border-left: none;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    background: $grey-1;
+    padding-right: 1rem;
+  }
+}
