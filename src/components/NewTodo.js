@@ -7,8 +7,10 @@ const NewTodo = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    newTodo(e.target.text.value);
-    e.target.text.value = '';
+    const text = e.target.text;
+    if (!text.value) return;
+    newTodo(text.value);
+    text.value = '';
   };
 
   return (

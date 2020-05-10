@@ -1,9 +1,11 @@
 import React, { useContext } from 'react';
 import trashIcon from '../svg/trash-red.svg';
 import { TodoContext } from '../contexts/TodoContext';
+import { ModalContext } from '../contexts/ModalContext';
 
 const Todo = ({ todo }) => {
-  const { completeTodo, deleteTodo } = useContext(TodoContext);
+  const { completeTodo } = useContext(TodoContext);
+  const { openModal } = useContext(ModalContext);
 
   const handleChange = () => {
     completeTodo(todo._id);
@@ -21,7 +23,7 @@ const Todo = ({ todo }) => {
         />
         <label htmlFor={todo._id}>{todo.text}</label>
       </div>
-      <button className='btn' onClick={() => deleteTodo(todo._id)}>
+      <button className='btn' onClick={() => openModal(todo._id)}>
         <img src={trashIcon} alt='delete' />
       </button>
     </li>
